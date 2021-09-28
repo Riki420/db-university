@@ -16,3 +16,6 @@ SELECT * FROM `exams` WHERE `date` = '2020-06-20' AND `hour` >= '14:00:00';
 
 /*Selezionare tutti i corsi di laurea magistrale*/
 SELECT * FROM `degrees` WHERE `level` = 'magistrale';
+
+/*Da quanti dipartimenti è composta l'università?*/
+SELECT COUNT(*) AS `n_departments` FROM `departments`;
