@@ -19,3 +19,6 @@ SELECT * FROM `degrees` WHERE `level` = 'magistrale';
 
 /*Da quanti dipartimenti è composta l'università?*/
 SELECT COUNT(*) AS `n_departments` FROM `departments`;
+
+/*Quanti sono gli insegnanti che non hanno un numero di telefono?*/
+SELECT COUNT(*) AS `n_no_phone` FROM `teachers` WHERE `phone` is NULL;
