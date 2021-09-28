@@ -22,3 +22,11 @@ SELECT COUNT(*) AS `n_departments` FROM `departments`;
 
 /*Quanti sono gli insegnanti che non hanno un numero di telefono?*/
 SELECT COUNT(*) AS `n_no_phone` FROM `teachers` WHERE `phone` is NULL;
+
+
+
+
+
+
+/*Contare quanti iscritti ci sono stati ogni anno*/
+SELECT COUNT(*) AS `n_for_year`, YEAR(`enrolment_date`) AS `year` FROM `students` GROUP BY `year`;
