@@ -39,3 +39,8 @@ SELECT ROUND(AVG(`vote`)) AS `avg_vote`, `exam_id` FROM `exam_student` GROUP BY 
 
 /*Contare quanti corsi di laurea ci sono per ogni dipartimento*/
 SELECT COUNT(*) AS `n_degrees`, `department_id` FROM `degrees` GROUP BY `department_id`;
+
+
+
+/*Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia*/
+SELECT `students`.`name`, `students`.`surname`, `degrees`.`name` FROM `students` JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia'
