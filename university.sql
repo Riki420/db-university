@@ -1,4 +1,9 @@
 
+/*--------------------------------------------------------------------------------------*/
+/*                                        SELECT                                        */
+/*--------------------------------------------------------------------------------------*/
+
+
 /*Selezionare tutti gli studenti nati nel 1990*/
 SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
 
@@ -24,7 +29,9 @@ SELECT COUNT(*) AS `n_departments` FROM `departments`;
 SELECT COUNT(*) AS `n_no_phone` FROM `teachers` WHERE `phone` is NULL;
 
 
-
+/*--------------------------------------------------------------------------------------*/
+/*                                        GROUP                                         */
+/*--------------------------------------------------------------------------------------*/
 
 
 
@@ -42,5 +49,13 @@ SELECT COUNT(*) AS `n_degrees`, `department_id` FROM `degrees` GROUP BY `departm
 
 
 
+/*--------------------------------------------------------------------------------------*/
+/*                                        JOIN                                          */
+/*--------------------------------------------------------------------------------------*/
+
+
 /*Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia*/
-SELECT `students`.`name`, `students`.`surname`, `degrees`.`name` FROM `students` JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia'
+SELECT `students`.`name`, `students`.`surname`, `degrees`.`name` FROM `students` JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
+
+/*Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze*/
+SELECT `departments`.`name`, `degrees`.`name` FROM `degrees` JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` WHERE `departments`.`name` = 'Dipartimento di Neuroscienze';
